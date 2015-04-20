@@ -1,0 +1,9 @@
+controller_list:
+  - name: fake_mico_arm_vrep_controller
+    joints:
+      - Mico_joint1
+      - Mico_joint2
+      - Mico_joint3
+      - Mico_joint4
+      - Mico_joint5
+      - Mico_joint6
