@@ -14,7 +14,6 @@
   <!-- If needed, broadcast static tf for robot root -->
   
 
-
   <!-- Run the main MoveIt executable without trajectory execution (we do not have controllers configured by default) -->
   <include file="$(find mico_arm_vrep_moveit_config)/launch/move_group.launch">
     <arg name="allow_trajectory_execution" value="true"/>  

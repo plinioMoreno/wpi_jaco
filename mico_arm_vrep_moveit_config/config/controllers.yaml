@@ -4,10 +4,10 @@ controller_list:
     action_ns: joint_velocity_controller/trajectory
     type: FollowJointTrajectory
     joints: 
-      - mico_joint_1
-      - mico_joint_2
-      - mico_joint_3
-      - mico_joint_4
-      - mico_joint_5
-      - mico_joint_6
+      - Mico_joint1
+      - Mico_joint2
+      - Mico_joint3
+      - Mico_joint4
+      - Mico_joint5
+      - Mico_joint6
 

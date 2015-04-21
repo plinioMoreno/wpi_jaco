@@ -158,6 +158,28 @@
 		</link>
 	</xacro:macro>
 
+	<xacro:macro name="mico_joint_transmission" params="transmission_name joint_name motor_name">
+		<transmission name="${transmission_name}">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="${joint_name}">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="${motor_name}">
+			<mechanicalReduction>1</mechanicalReduction>
+			</actuator>
+		</transmission>
+	</xacro:macro>
+
+	<xacro:macro name="mico_joint_friction_gazebo" params="link_name mu1 mu2 kp kd">
+		<gazebo reference="${link_name}">
+			<mu1 value="${mu1}" />
+			<mu2  value="${mu2}"/>
+				<kp value="${kp}" />
+				<kd value="${kd}" />
+		</gazebo>
+	</xacro:macro>
+	
+
 	<xacro:macro name="mico_joint" params="joint_name type parent child joint_axis_xyz joint_origin_xyz joint_origin_rpy lower_limit upper_limit">
 		<joint name="${joint_name}" type="${type}">
 			<parent link="${parent}" />

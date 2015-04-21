@@ -5,14 +5,14 @@
   <!-- Load the URDF file -->
   <arg name="urdf_file" default="$(find xacro)/xacro.py '$(find mico_description)/robots/standalone_arm_vrep.urdf.xacro'" />
   <param name="robot_description" command="$(arg urdf_file)" />
-  <!--<node pkg="tf" type="static_transform_publisher" name="root_to_mico_base" args="0.0 0.0 0.0 0.0 0.0 0.0 root mico_joint_base 50" />-->
   <!-- State publishers -->
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
     <param name="publish_frequency" type="double" value="50" />
     <remap from="joint_states" to="/vrep/Mico/jointStatus"/>
   </node>
-  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+  <!--<node pkg="tf" type="static_transform_publisher" name="root_to_mico_base" args="0.0 0.0 0.0 0.0 0.0 0.0 root mico_link_base 50" />-->
+  <!--<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
     <param name="use_gui" value="$(arg gui)" />
-    <!--<rosparam param="source_list">[mico_arm/joint_states]</rosparam>-->
-  </node>
+    <rosparam param="source_list">[mico_arm/joint_states]</rosparam>
+  </node>-->
 </launch>
