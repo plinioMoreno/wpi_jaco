@@ -178,7 +178,23 @@
 				<kd value="${kd}" />
 		</gazebo>
 	</xacro:macro>
-	
+	<xacro:property name="mu1_default" value="0.2" />
+	<xacro:property name="mu2_default" value="0.2" />
+	<xacro:property name="kp_default" value="1000000.0" />
+	<xacro:property name="kd_default" value="1.0" />
+	<xacro:mico_joint_transmission transmission_name="${joint_1}_transmission" joint_name="${joint_1}" motor_name="${joint_1}_motor"/>
+	<xacro:mico_joint_transmission transmission_name="${joint_2}_transmission" joint_name="${joint_2}" motor_name="${joint_2}_motor"/>
+	<xacro:mico_joint_transmission transmission_name="${joint_3}_transmission" joint_name="${joint_3}" motor_name="${joint_3}_motor"/>
+	<xacro:mico_joint_transmission transmission_name="${joint_4}_transmission" joint_name="${joint_4}" motor_name="${joint_4}_motor"/>
+	<xacro:mico_joint_transmission transmission_name="${joint_5}_transmission" joint_name="${joint_5}" motor_name="${joint_5}_motor"/>
+	<xacro:mico_joint_transmission transmission_name="${joint_6}_transmission" joint_name="${joint_6}" motor_name="${joint_6}_motor"/>
+
+	<xacro:mico_joint_friction_gazebo link_name="${link_base}" mu1="${mu1_default}" mu2="${mu2_default}" kp="${kp_default}" kd="${kd_default}" />
+	<xacro:mico_joint_friction_gazebo link_name="${link}" mu1="${mu1_default}" mu2="${mu2_default}" kp="${kp_default}" kd="${kd_default}" />
+	<xacro:mico_joint_friction_gazebo link_name="${link_1}" mu1="${mu1_default}" mu2="${mu2_default}" kp="${kp_default}" kd="${kd_default}" />
+	<xacro:mico_joint_friction_gazebo link_name="${link_2}" mu1="${mu1_default}" mu2="${mu2_default}" kp="${kp_default}" kd="${kd_default}" />
+	<xacro:mico_joint_friction_gazebo link_name="${link_3}" mu1="${mu1_default}" mu2="${mu2_default}" kp="${kp_default}" kd="${kd_default}" />
+	<xacro:mico_joint_friction_gazebo link_name="${link_hand}" mu1="${mu1_default}" mu2="${mu2_default}" kp="${kp_default}" kd="${kd_default}" />	
 
 	<xacro:macro name="mico_joint" params="joint_name type parent child joint_axis_xyz joint_origin_xyz joint_origin_rpy lower_limit upper_limit">
 		<joint name="${joint_name}" type="${type}">
