@@ -77,7 +77,7 @@
       </link>
       <static>true</static>
     </model>
-    <include filename="../models/banner_beta.model" model_name="banner_beta" model_pose="0.6 3.345 1.191 1.571 0 3.141" />
+    <!-- <include filename="../models/banner_beta.model" model_name="banner_beta" model_pose="0.6 3.345 1.191 1.571 0 3.141" /> -->
   </world>
 </sdf>
 

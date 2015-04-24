@@ -99,7 +99,7 @@
         <collision name="tum_kitchen_collision">
           <geometry>
             <mesh>
-              <uri>model://media/others/models/tum_kitchen.dae</uri>
+              <uri>model://media/models/tum_kitchen.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -107,7 +107,7 @@
         <visual name="tum_kitchen_visual">
           <geometry>
             <mesh>
-              <uri>model://media/others/models/tum_kitchen.dae</uri>
+              <uri>model://media/models/tum_kitchen.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -122,7 +122,7 @@
         <visual name="cvg_logo">
           <geometry>
             <mesh>
-              <uri>model://media/others/models/cvg_logo.dae</uri>
+              <uri>model://media/models/cvg_logo.dae</uri>
               <scale>5.45 0.95 0.5</scale>
             </mesh>
           </geometry>

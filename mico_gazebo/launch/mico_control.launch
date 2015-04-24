@@ -6,7 +6,7 @@
 
 	  <!-- Load the controllers -->
 	  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-	    output="screen" ns="/mico" args="
+	    output="screen" ns="/mico_arm" args="
 		mico_joint1_position_controller
 		mico_joint2_position_controller 
 		mico_joint3_position_controller 
