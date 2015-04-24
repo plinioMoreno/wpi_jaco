@@ -5,7 +5,7 @@
 	<rosparam file="$(find mico_gazebo)/config/mico_control.yaml" command="load"/>
 
 	  <!-- Load the controllers -->
-	  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+	  <!--<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
 	    output="screen" ns="/mico_arm" args="
 		mico_joint1_position_controller
 		mico_joint2_position_controller 
@@ -15,5 +15,7 @@
 		mico_joint6_position_controller 
 		mico_finger1_position_controller 
 		mico_finger2_position_controller 
-		joint_state_controller" />
+		joint_state_controller" />-->
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+	    output="screen" ns="/mico_arm" args="joint_state_controller" />
 </launch>

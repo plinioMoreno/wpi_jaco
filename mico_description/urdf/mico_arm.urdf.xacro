@@ -88,6 +88,11 @@
 
 	<xacro:macro name="mico_link" params="link_name">
 		<link name="${link_name}">
+	    <inertial>
+                <mass value="1"/>
+                <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+                <origin/>
+            </inertial>
 			<visual>
 				<geometry>
 					<mesh filename="package://mico_description/meshes/${link_name}.dae" />
@@ -106,6 +111,11 @@
 
 	<xacro:macro name="mico_link_suffix" params="link_name suffix">
 		<link name="${link_name}_${suffix}">
+       	<inertial>
+                <mass value="0.25"/>
+                <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+                <origin/>
+            </inertial>
 			<visual>
 				<geometry>
 					<mesh scale="${M_SCALE} ${M_SCALE} ${M_SCALE}" filename="package://mico_description/meshes/${link_name}.dae" />
@@ -124,6 +134,11 @@
 
 	<xacro:macro name="mico_link_4_5" params="link_name suffix">
 		<link name="${link_name}_${suffix}">
+	    <inertial>
+                <mass value="0.5"/>
+                <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+                <origin/>
+            </inertial>
 			<visual>
 				<geometry>
 					<mesh filename="package://mico_description/meshes/${link_name}_4_5.dae" />
@@ -142,6 +157,11 @@
 
 	<xacro:macro name="mico_ring_cover" params="suffix size">
 		<link name="mico_${size}_ring_cover_${suffix}">
+	    <inertial>
+                <mass value="0"/>
+                <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+                <origin/>
+            </inertial>
 			<visual>
 				<geometry>
 					<mesh scale="${M_SCALE} ${M_SCALE} ${M_SCALE}" filename="package://mico_description/meshes/mico_${size}_ring_cover.dae" />
@@ -217,6 +237,12 @@
 	</xacro:macro>
 
 	<xacro:macro name="mico_arm" params="parent xyz rpy">
+	<gazebo>
+            <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_controller_manager">
+                <!-- <robotNamespace>/</robotNamespace> -->
+                <robotParam>robot_description</robotParam>
+            </plugin>
+        </gazebo>
 		<xacro:mico_link link_name="${link_base}" />
 		<xacro:mico_joint joint_name="${joint_base}" type="fixed" parent="${parent}" child="${link_base}" joint_axis_xyz="${joint_base_axis_xyz}" joint_origin_xyz="${xyz}" joint_origin_rpy="${rpy}" lower_limit="-${J_LIM}" upper_limit="${J_LIM}" />
 		<xacro:mico_link link_name="${link_1}" />
