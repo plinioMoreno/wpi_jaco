@@ -1,4 +1,4 @@
-mico:
+mico_arm:
 
   # Publish all joint states
   joint_state_controller:

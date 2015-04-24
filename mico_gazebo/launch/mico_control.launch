@@ -15,5 +15,5 @@
 		mico_joint6_position_controller 
 		mico_finger1_position_controller 
 		mico_finger2_position_controller 
-		joint_state_position_controller" />
+		joint_state_controller" />
 </launch>
