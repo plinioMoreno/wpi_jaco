@@ -50,6 +50,6 @@ mico_arm:
  # Finger 2 Controllers
   mico_joint_finger_2_position_controller:
     type: effort_controllers/JointPositionController
-    joint: mico_joint_finger_1
+    joint: mico_joint_finger_2
     pid: {p: 10.0, i: 0.0, d: 0.0}
-  
+
