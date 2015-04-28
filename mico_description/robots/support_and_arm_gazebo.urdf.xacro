@@ -48,7 +48,7 @@
     <!--             <cylinder length="0.2" radius="0.025"/> -->
 	<!-- 		</geometry> -->
 	<!-- 	</collision> -->
-	<!-- </link> -->
+	<!-- </link> 
     
 	<link name="support">
         <inertial>
@@ -73,7 +73,11 @@
 	<joint name="support_joint" type="fixed">
 	  <parent link="root" />
 	  <child link="support" />
+	</joint>-->
+	<link name="world"/>
+	<joint name="fixed" type="fixed">
+	    <parent link="world"/>
+	    <child link="root"/>
 	</joint>
-
-	<xacro:mico_arm parent="support" xyz="0 0 0.2" rpy="0 0 0" />
+	<xacro:mico_arm parent="root" xyz="0 0 0.2" rpy="0 0 0" />
 </robot>
